@@ -1,0 +1,33 @@
+@hostname = localhost
+@port = 5050
+@host = http://{{hostname}}:{{port}}
+
+###
+GET {{host}}/phone
+
+###
+GET {{host}}/phone/1
+
+###
+GET {{host}}/phone/search/number?number=046 9352 542
+
+###
+POST {{host}}/phone
+Content-Type: application/json
+
+{
+   "number": "046 6243 235",
+   "UserId": 2
+}
+
+###
+PUT {{host}}/phone/2
+Content-Type: application/json
+
+{
+   "number":  "046 7543 751",
+   "UserId": 3
+}
+
+###
+DELETE {{host}}/phone/4

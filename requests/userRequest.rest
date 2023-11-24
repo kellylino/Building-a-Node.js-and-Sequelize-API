@@ -1,0 +1,41 @@
+@hostname = localhost
+@port = 5050
+
+@host = http://{{hostname}}:{{port}}
+
+###
+GET {{host}}/user
+
+###
+GET {{host}}/user/3
+
+###
+GET {{host}}/user/search/name?first_name=angel&last_name=Wang
+
+###
+GET {{host}}/user/search/nameAndNumber?first_name=angel&last_name=Wang&number=046 7543 751
+
+###
+POST {{host}}/user
+Content-Type: application/json
+
+{
+   "first_name": "Haiyuan",
+    "last_name": "Lin",
+    "city": "Hervanta",
+    "address": "opiskelijakatu 15"
+}
+
+###
+PUT {{host}}/user/1
+Content-Type: application/json
+
+{
+    "first_name": "Daisy",
+    "last_name": "doe",
+    "city": "Hervanta",
+    "address": "opiskelijakadu 11"
+}
+
+###
+DELETE {{host}}/user/3
